@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/profile_fragment_dest"
+        android:name="com.ussz.jobify.fragments.profileFragments.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/toEditProfile"
+            app:destination="@id/editProfileFragment" />
+        <argument
+            android:name="messageForEditing"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ussz.jobify.fragments.homeFragments.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.ussz.jobify.fragments.exploreFragments.ExploreFragment"
+        android:label="Explore"
+        tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/following_fragment_dest"
+        android:name="com.ussz.jobify.fragments.FollowingFragment"
+        android:label="Following"
+        tools:layout="@layout/fragment_following" />
+    <fragment
+        android:id="@+id/org_profile_fragment_dest"
+        android:name="com.ussz.jobify.fragments.OrgProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_org_profile" />
+    <fragment
+        android:id="@+id/registrationFragmentOne"
+        android:name="com.ussz.jobify.fragments.registrationFragment.RegistrationFragmentOne"
+        android:label="Registration Step 1"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/toRegistrationTwo"
+            app:destination="@id/registrationFragmentTwo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="registrationOneData"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragmentTwo"
+        android:name="com.ussz.jobify.fragments.registrationFragment.RegistrationFragmentTwo"
+        android:label="Registration Step 2"
+        tools:layout="@layout/fragment_registration_fragment_two" >
+        <action
+            android:id="@+id/toHomeFromRegistrationTwo"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_fragment_dest"
+        android:name="com.ussz.jobify.fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/toRegistrationOne"
+            app:destination="@id/registrationFragmentOne"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/toHomeFromLogin"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.ussz.jobify.fragments.profileFragments.EditProfileFragment"
+        android:label="@string/editProfile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/editProfileImageFragment"
+        android:name="com.ussz.jobify.fragments.profileFragments.EditProfileImageFragment"
+        android:label="Edit Profile image"
+        tools:layout="@layout/fragment_edit_profile_image" />
+    <fragment
+        android:id="@+id/fragment_job_detail_dest"
+        android:name="com.ussz.jobify.fragments.JobDetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_job_detail" />
+    <fragment
+        android:id="@+id/meetup_detail_fragment_dest"
+        android:name="com.ussz.jobify.fragments.MeetupDetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_meetup_detail" />
+    <fragment
+        android:id="@+id/home_jobs_fragment_dest"
+        android:name="com.ussz.jobify.fragments.homeFragments.HomeJobsFragment"
+        android:label="Jobs"
+        tools:layout="@layout/fragment_home_jobs" />
+</navigation>
